@@ -1,4 +1,5 @@
 @extends('layouts.guest')
+@section('page-title', 'Login')
 
 @section('main-content')
     <form method="POST" action="{{ route('login') }}">
@@ -17,7 +18,7 @@
             <label for="password">
                 Password
             </label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" placeholder="Inserisci la tua password">
         </div>
 
         <!-- Remember Me -->
@@ -30,12 +31,12 @@
 
         <div class="mt-4">
             @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}">
+                <a href="{{ route('password.request') }}" class="me-2">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
 
-            <button type="submit">
+            <button type="submit" class="btn btn-success">
                 Log in
             </button>
         </div>
