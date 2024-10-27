@@ -5,7 +5,17 @@
 @section ('main-content')
 <div class="col">
     <h1 class="pb-2">Crea un nuovo progetto</h1>
-
+    @if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>
+                    {{$error}}
+                </li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form action="{{route('admin.projects.store')}}" method="POST">
         @csrf
         <div class="mb-3">
@@ -17,6 +27,7 @@
             required
             minlength="3"
             maxlength="64"
+            value="{{old('title')}}"
             placeholder="Inserisci il titolo">
         </div>
         <div class="mb-3">
@@ -27,7 +38,7 @@
              minlength="3"
              maxlength="1024"
              placeholder="Inserisci la descrizione"
-             rows="3"></textarea>
+             rows="3">{{old('description')}}</textarea>
         </div>
         <div class="mb-3">
             <label for="languages" class="form-label">Linguaggi *</label>
@@ -38,6 +49,7 @@
             required
             minlength="3"
             maxlength="64"
+            value="{{old('languages')}}"
             placeholder="Inserisci i linguaggi utilizzati">
         </div>
         <div class="mb-3">
@@ -53,6 +65,7 @@
             <input type="date"
             name="starting_date"
             class="form-control"
+            value="{{old('date')}}"
             id="starting_date">
         </div>
         <div class="mb-3">
