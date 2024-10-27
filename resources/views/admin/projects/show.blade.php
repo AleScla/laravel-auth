@@ -6,6 +6,17 @@
 <div class="row">
     <div class="col">
         <h1>Progetto: {{$project->title}}</h1>
+        @if ($errors->any())
+                <div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>
+                                {{$error}}
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         <div class="card">
             <h5 class="card-header">{{$project->title}}</h5>
             <div class="card-body">

@@ -41,8 +41,8 @@
             placeholder="Inserisci i linguaggi utilizzati">
         </div>
         <div class="mb-3">
-            <label for="type" class="form-label">Stato del progetto</label>
-            <select id="type" name="type" class="form-select" aria-label="Default select example">
+            <label for="completed" class="form-label">Stato del progetto</label>
+            <select id="completed" name="completed" class="form-select" aria-label="Default select example">
                 <option class="d-none" disabled selected>Seleziona lo stato del progetto</option>
                 <option value="0">In lavorazione</option>
                 <option value="1">Completato</option>
@@ -66,8 +66,8 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="type" class="form-label">Livello del programmatore</label>
-            <select id="type" name="type" class="form-select" aria-label="Default select example">
+            <label for="level" class="form-label">Livello del programmatore</label>
+            <select id="level" name="level" class="form-select" aria-label="Default select example">
                 <option class="d-none" disabled selected>Scegli il livello di esperienza del programmatore</option>
                 <option value="junior">Principiante</option>
                 <option value="experienced">Con esperienza</option>
