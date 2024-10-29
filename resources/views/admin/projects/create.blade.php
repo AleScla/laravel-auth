@@ -65,7 +65,7 @@
             <input type="date"
             name="starting_date"
             class="form-control"
-            value="{{old('date')}}"
+            value="{{old('starting_date')}}"
             id="starting_date">
         </div>
         <div class="mb-3">

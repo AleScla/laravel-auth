@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title',64);
             $table->text('description');
             $table->string('languages', 64);
-            $table->boolean('completed')->default('false');
+            $table->boolean('completed')->default(false);
             $table->date('starting_date')->nullable();
             $table->text('type',64)->nullable(); //con tipo mi riferisco a front-end/back-end
             $table->text('level', 64)->nullable();

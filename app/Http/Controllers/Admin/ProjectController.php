@@ -30,11 +30,12 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'title'=>'required|min:3|max:64',
             'description'=>'required|min:3|max:1024',
             'languages'=>'required|min:3|max:64',
-            'completed'=>'required|min:0|max:1',
+            'completed'=>'required|integer|min:0|max:1',
             'starting_date'=> 'nullable|date',
             'type'=>'nullable|min:3|max:64',
             'level'=>'nullable|min:3|max:64',
@@ -66,11 +67,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        dd($request);
         $request->validate([
             'title'=>'required|min:3|max:64',
             'description'=>'required|min:3|max:1024',
             'languages'=>'required|min:3|max:64',
-            'completed'=>'required|min:0|max:1',
+            'completed'=>'required|integer|min:0|max:1',
             'starting_date'=> 'nullable|date',
             'type'=>'nullable|min:3|max:64',
             'level'=>'nullable|min:3|max:64',
