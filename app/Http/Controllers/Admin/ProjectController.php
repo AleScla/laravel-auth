@@ -30,7 +30,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'title'=>'required|min:3|max:64',
             'description'=>'required|min:3|max:1024',
@@ -78,7 +78,7 @@ class ProjectController extends Controller
             'level'=>'nullable|min:3|max:64',
         ]);
         $data = $request->all();
-        $project = Project::Create($data);
+        $project->update($data);
         return redirect()->route('admin.projects.show', ['project' => $project->id]);
     }
 
